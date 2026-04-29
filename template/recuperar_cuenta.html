@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿No tienes una cuenta?</title>
+</head>
+<body>
+    
+    <div id="recuperar" class="form-content">
+            <h2>Recuperar Cuenta</h2>
+            <form>
+                
+                <div class="input-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" placeholder="ingrse su correo">
+                </div>
+
+    <div class="col-4 mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password-number-tex" class="form-control" id="contraseña"
+                placeholder="introdusca su contraseña">
+        </div>
+                
+                <button type="button" class="btn btn-primary">Enviar enlace</button>
+                
+                <a href="#" class="link" onclick="mostrarForm('login')">Volver al inicio de sesión</a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function mostrarForm(formId) {
+            document.querySelectorAll('.form-content').forEach(form => {
+                form.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(formId).classList.add('active');
+            
+            if(formId === 'login' || formId === 'registro') {
+                document.querySelector([onclick="mostrarForm('${formId}')"]).classList.add('active');
+            } else {
+                document.querySelector([onclick="mostrarForm('login')"]).classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
